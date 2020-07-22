@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩 for문</title>
+    <!-- 
+        1. 12개의 탄생석 이미지를 4행 3열 테이블에 출력하시오.
+        - 이미지 밑에 월/탄생석/상징을 나타내는 문자열을 출력하시오.
+
+        2.table을 사용하지 않고, div로 묶어 출력하시오.
+     -->
+     <style>
+         .container {text-align: center;}
+         h3{width: 100%; text-align: center;}
+         table{
+             border: 1px solid black;
+             border-collapse: collapse;
+             margin: 0 auto;
+         }
+         tr { }
+         td{width: 300px; border: 1px solid black; padding: 10px}
+         span{
+             font-weight: bold;
+             color: red;
+         }
+     </style>
+</head>
+<body>
+    <div class="container">
+        <h3>월별 탄생석과 상징</h3>
+    <script>
+        // 1번 방법 - table 활용
+        document.write('<table>');
+        
+        var idx = 0;
+        var stones = ['<p><span>1월</span>의 탄생석은 <span>가넷</span>이고<br> 상징은 <span>사랑, 진실</span> 입니다.</p>', '<p><span>2월</span>의 탄생석은 <span>자수정</span>이고<br> 상징은 <span>평화,성실</span> 입니다.</p>','<p><span>3월</span>의 탄생석은 <span>아쿠아마린</span>이고<br> 상징은 <span>총명,용감</span> 입니다.</p>', '<p><span>4월</span>의 탄생석은 <span>다이아몬드</span>이고<br> 상징은 <span>영원한사랑</span> 입니다.</p>', '<p><span>5월</span>의 탄생석은 <span>에메랄드</span>이고<br> 상징은 <span>행복,행운</span> 입니다.</p>', '<p><span>6월</span>의 탄생석은 <span>진주</span>이고<br> 상징은 <span>건강,부귀</span> 입니다.</p>', '<p><span>7월</span>의 탄생석은 <span>루비</span>이고<br> 상징은 <span>영원한생명,열정,용기</span> 입니다.</p>', '<p><span>8월</span>의 탄생석은 <span>감람석</span>이고<br> 상징은 <span>지혜,부부의행복</span> 입니다.</p>', '<p><span>9월</span>의 탄생석은 <span>사파이어</span>이고<br> 상징은 <span>지혜,불변</span> 입니다.</p>', '<p><span>10월</span>의 탄생석은 <span>오팔</span>이고<br> 상징은 <span>희망,순결</span> 입니다.</p>', '<p><span>11월</span>의 탄생석은 <span>토파즈</span>이고<br> 상징은 <span>우정,인내</span> 입니다.</p>', '<p><span>12월</span>의 탄생석은 <span>터키석</span>이고<br> 상징은 <span>성공,승리</span> 입니다.</p>'];
+
+        for(var i=1; i<=4; i++) {
+            document.write('<tr>');
+            for(var j=1; j<=3; j++){
+                document.write('<td>');
+                if(idx < 9){
+                    document.write('<img src="images/stone0' + (idx+1) + '.png">');
+                }else {
+                    document.write('<img src="images/stone' + (idx+1) + '.png">');
+                }
+                document.write(stones[idx]);
+                idx++;
+                document.write('</td>');
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+    </script>
+    </div>
+</body>
+</html>

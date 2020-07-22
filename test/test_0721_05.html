@@ -13,18 +13,19 @@
 </head>
 <body>
     <script>
-        var num = Number(prompt('정수 입력'));
-        var result = 1;
+        var num = prompt('정수 입력');
+        var fact = 1;
 
         document.write(num + '! = ')
-        for(var i = num; i > 0; i--) {
+        for(var i=num; i>=1; i--) {
             if(i > 1){
                 document.write(i + ' * ');
-                result *= i; 
-            }else {
-                document.write(i + ' = ' + result);
-            }
+            }else{
+                 document.write(i + ' = ');
+            } 
+            fact *= i;
         }
+        document.write(fact);
     </script>
 </body>
 </html>

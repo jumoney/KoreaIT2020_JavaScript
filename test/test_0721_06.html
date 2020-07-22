@@ -15,20 +15,19 @@
 </head>
 <body>
     <script>
-        var num = Number(prompt('정수 입력'));
-        var count = 0;
-        var sum = 0;
+        var num = prompt('정수 입력');
+        var count = 0, sum = 0;
 
-        document.write('약수 :')
+        document.write('약수 : ')
         for(var i = 1; i <=num; i++) {
             if(num%i == 0){
-                document.write(' ' + i + ' ');
+                document.write(i + ' ');
                 count++;
                 sum += i;
             }
         }
-        document.write('<br>약수의 갯수 : ' + count + '개');
-        document.write('<br>약수의 합 : ' + sum);
+        document.write('<br>' + num + '의 약수의 갯수 : ' + count + '개');
+        document.write('<br>' + num + '의 약수의 합 : ' + sum);
     </script>
 </body>
 </html>

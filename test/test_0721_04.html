@@ -13,16 +13,16 @@
 </head>
 <body>
     <script>
-        var num = Number(prompt('정수 입력'));
-        var color;
+        var num = prompt('정수 입력');
 
         for(var i=1; i<=num; i++){
-            if((i%2)==0){
-                color = 'blue';
+            if((i%2)==1){
+               
+                document.write('<span style="color: red";>' + i +' </span>')
             }else {
-                color = 'red';
+                document.write('<span style="color: blue";>' + i +' </span>')
             }
-            document.write('<span style="color:'+ color  +'";> '+ i +'</span>');
+            
         }
 
     </script>
