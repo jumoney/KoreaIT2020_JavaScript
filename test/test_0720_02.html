@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1.입력창으로부터 가위/바위/보 중에 하나를 입력받아서 브라우저 화면에 해당 이미지를 출력하는 프로그램
+        결과 : 가위를 입력하셨습니다.
+     -->
+</head>
+<body>
+    <script>
+        var str = prompt("가위/바위/보 중 하나를 입력하여주십시오.", "가위");
+
+        document.write('<h3>' + str + '를 입력하셨습니다.</h3>');
+
+        if(str == "가위"){
+           document.write(' <img src="images/math_img_1.jpg">');
+        }else if(str == "바위"){
+            document.write(' <img src="images/math_img_2.jpg">');
+        }else if(str == "보"){
+            document.write(' <img src="images/math_img_3.jpg">');
+        }else{
+            document.write('정확히 입력해 주십시오.');
+        }
+    </script>
+    
+</body>
+</html>
