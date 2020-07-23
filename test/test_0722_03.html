@@ -11,19 +11,20 @@
         2.table을 사용하지 않고, div로 묶어 출력하시오.
      -->
      <style>
-         .container {text-align: center;}
+         .container {text-align: center; width: 1280px; margin: 0 auto;}
          h3{width: 100%; text-align: center;}
          table{
              border: 1px solid black;
              border-collapse: collapse;
              margin: 0 auto;
          }
-         tr { }
-         td{width: 300px; border: 1px solid black; padding: 10px}
+         .container div { margin: 10px; width: 280px; border: 1px solid black; display: inline-block; height: 260px; margin-top: 10px;}
+         td{width: 300px; border: 1px solid black; padding: 10px;}
          span{
              font-weight: bold;
              color: red;
          }
+         img{width: 150px; height: 150px; margin-top: 10px;}
      </style>
 </head>
 <body>
@@ -52,6 +53,27 @@
             document.write('</tr>');
         }
         document.write('</table>');
+
+        // 2. div 태그 사용
+
+        var idx = 0;
+        var stones = ['<p><span>1월</span>의 탄생석은 <span>가넷</span>이고<br> 상징은 <span>사랑, 진실</span> 입니다.</p>', '<p><span>2월</span>의 탄생석은 <span>자수정</span>이고<br> 상징은 <span>평화,성실</span> 입니다.</p>','<p><span>3월</span>의 탄생석은 <span>아쿠아마린</span>이고<br> 상징은 <span>총명,용감</span> 입니다.</p>', '<p><span>4월</span>의 탄생석은 <span>다이아몬드</span>이고<br> 상징은 <span>영원한사랑</span> 입니다.</p>', '<p><span>5월</span>의 탄생석은 <span>에메랄드</span>이고<br> 상징은 <span>행복,행운</span> 입니다.</p>', '<p><span>6월</span>의 탄생석은 <span>진주</span>이고<br> 상징은 <span>건강,부귀</span> 입니다.</p>', '<p><span>7월</span>의 탄생석은 <span>루비</span>이고<br> 상징은 <span>영원한생명,열정,용기</span> 입니다.</p>', '<p><span>8월</span>의 탄생석은 <span>감람석</span>이고<br> 상징은 <span>지혜,부부의행복</span> 입니다.</p>', '<p><span>9월</span>의 탄생석은 <span>사파이어</span>이고<br> 상징은 <span>지혜,불변</span> 입니다.</p>', '<p><span>10월</span>의 탄생석은 <span>오팔</span>이고<br> 상징은 <span>희망,순결</span> 입니다.</p>', '<p><span>11월</span>의 탄생석은 <span>토파즈</span>이고<br> 상징은 <span>우정,인내</span> 입니다.</p>', '<p><span>12월</span>의 탄생석은 <span>터키석</span>이고<br> 상징은 <span>성공,승리</span> 입니다.</p>'];
+
+        for(var i=1; i<=4; i++) {
+            for(var j=1; j<=3; j++){
+                document.write('<div>');
+                if(idx < 9){
+                    document.write('<img src="images/stone0' + (idx+1) + '.png">');
+                }else {
+                    document.write('<img src="images/stone' + (idx+1) + '.png">');
+                }
+                document.write(stones[idx]);
+                document.write('</div>');
+                idx++; 
+            }
+           
+        }
+
     </script>
     </div>
 </body>
