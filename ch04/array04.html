@@ -11,7 +11,7 @@
      -->
      <style>
          table{border: 1px solid black; border-collapse: collapse; margin: 0 auto;}
-         td, th{border: 1px solid black; text-align: center; padding: 10px;}
+         td, th{border: 1px solid black; text-align: center; padding: 10px; width: 50px;}
          caption{
              margin-bottom: 10px; font-size: x-large; font-weight: bold;
          }
@@ -20,51 +20,46 @@
 </head>
 <body>
     <script>
-        var midtot = 0, lastot = 0, sumtot = 0, avetot = 0;
+        var result = new Array(0, 0, 0, 0);
+        var title = ['이름', '전공', '중간', '기말', '총점', '평균'];
         var student = new Array(
-            Array("이익준", "컴공", 88, 76), // 이름, 전공, 중간, 기말
-            Array("양세형", "수학", 70, 83),
-            Array("채송화", "물리", 92, 95),
-            Array("안정원", "전자", 85, 92),
-            Array("김준완", "기계", 97, 88),
+            Array("이익준", "컴공", 88, 76, 0, 0), // 이름, 전공, 중간, 기말
+            Array("양세형", "수학", 70, 83, 0, 0),
+            Array("채송화", "물리", 92, 95, 0, 0),
+            Array("안정원", "전자", 85, 92, 0, 0),
+            Array("김준완", "기계", 97, 88, 0, 0),
+            Array("황시목", "법학", 95, 79, 0, 0),
         );
+
         document.write("<table>");
-        document.write("<caption>성적표</caption>")
+        document.write("<caption>성적표</caption>");
         document.write('<tr>');
-        document.write('<th>이름</th>');
-        document.write('<th>전공</th>');
-        document.write('<th>중간</th>');
-        document.write('<th>기말</th>');
-        document.write('<th>총점</th>');
-        document.write('<th>평균</th>');
+        for (var i = 0; i < title.length; i++) {
+            document.write('<th>' + title[i] + '</th>');
+        }
         document.write('</tr>');
         for (var i = 0; i < student.length; i++) {
-            var sum = 0, ave = 0;
             document.write("<tr>");
-            for (var j = 0; j < student[i].length; j++) {
+            for (var j = 0; j < student[i].length - 2; j++) {
                 document.write("<td>");
-                sum = student[i][2] + student[i][3]
-                ave = (sum / 2).toFixed(2);
-                student[i][4] = sum;
-                student[i][5] = ave;
                 document.write(student[i][j] + ' ');
                 document.write("</td>");
             }
-            midtot += student[i][2];
-            lastot += student[i][3];
-            sumtot += sum;
-            avetot += Number(ave);
-            document.write("<br>");
+            student[i][4] = student[i][2] + student[i][3];
+            student[i][5] = (student[i][4] / 2).toFixed(2);
+            document.write("<td>" + student[i][4] + "</td>");
+            document.write("<td>" + student[i][5] + "</td>");
+            result[0] += student[i][2];
+            result[1] += student[i][3];
+            result[2] += student[i][4];
+            result[3] += Number(student[i][5]);
             document.write("</tr>");
         }
-        document.write('<tr>');
-        document.write('<th colspan="2">' + " 합계 " + '</th>');
-        document.write('<td>' + midtot + '</td>');
-        document.write('<td>' + lastot + '</td>');
-        document.write('<td>' + sumtot + '</td>');
-        document.write('<td>' + avetot + '</td>');
-        document.write('</tr>');
-        document.write("</table>");
+        document.write('<tr><th colspan="2">' + " 통계 " + '</th>');
+        for (var i = 0; i < result.length; i++) {
+            document.write('<td>' + (result[i] / student.length).toFixed(2) + '</td>');
+        }
+        document.write("</tr></table>");
     </script>
 </body>
 
