@@ -52,7 +52,7 @@
     function showTitle(books) {
         var str = " ";
         for (var i = 0; i < books.length; i++) {
-            str += `<li>${books[i].title}<button id="check" onclick="showInfo(${i})">확인</button><button id="del">삭제</button><li>`;
+            str += `<li>${books[i].title}<button id="check" onclick="showInfo(${i})">확인</button><button id="del" onclick="deleteBook(${i})">삭제</button><li>`;
         }
         document.querySelector('#title_place').innerHTML = str;
     }
@@ -64,6 +64,13 @@
     function showInfo(idx) {
       books[idx].showInfo();
     }
+
+    //삭제버튼 입력시
+    function deleteBook(idx) {
+        books.splice(idx, 1);
+        showTitle(books);
+    }
+    
    
 
 </script>
