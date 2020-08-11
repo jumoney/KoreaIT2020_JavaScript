@@ -6,72 +6,25 @@
     <title>밀리의 서재 또는 윌라</title>
     <style>
         .container { width: 500px; margin: 30px auto;}
-        .container ul {
-            list-style: none;
-        }
-        .container ul li {
-            margin-top: 20px;
-        }
-        .container ul li > button{
-            margin-left: 20px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>밀리의 서재에서 읽은 책</h1>
-        <div class="book_list">
-            <ul id="title_place">
-            
-            </ul>
-        </div>
+
     </div>
-</body>
-
-<script>
-    function Book(title, author, volume, price) {
-        //프로퍼티
-        this.title = title;
-        this.author = author;
-        this.volume = volume;
-        this.price = price;
-    }
-
-    Book.prototype.showInfo = function() {
-        alert('제목: ' + this.title + "저자 " + this.author + "페이지 정보: " + this.volume + "가격: " + this.price);
-    }
-
-    var books = [
-        new Book('오만과 편견', '제인 오스틴', 320, 6000),
-        new Book('레미제라블', '빅토르 위고', 500, 7500),
-        new Book('노인과 바다', '어니스트 헤밍웨이', 250, 7000),
-        new Book('전쟁과 평화', '레프 톨스토이', 620, 8000),
-    ];
-
-    // 타이틀 표시 함수
-    function showTitle(books) {
-        var str = " ";
-        for (var i = 0; i < books.length; i++) {
-            str += `<li>${books[i].title}<button id="check" onclick="showInfo(${i})">확인</button><button id="del" onclick="deleteBook(${i})">삭제</button><li>`;
+    <script>
+        // 객체 생성자 함수
+        // Book - title(제목), author(저자), volume(페이지), price(가격)
+        function Book(title, author, volume, price) {
+            // 프로퍼티
+            this.title = title;
+            this.author = author;
+            this.volume = volume;
+            this.price = price;
         }
-        document.querySelector('#title_place').innerHTML = str;
-    }
 
-    // 타이틀 표시 함수 호출
-    showTitle(books);
-
-    // 확인 버튼 입력시 책들의 상세 정보 출력
-    function showInfo(idx) {
-      books[idx].showInfo();
-    }
-
-    //삭제버튼 입력시
-    function deleteBook(idx) {
-        books.splice(idx, 1);
-        showTitle(books);
-    }
-    
-   
-
-</script>
+        // 프로토타입의 메소드
+        
+    </script>
+</body>
 </html>

@@ -4,38 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>중첩 for문</title>
+    <style>
+        .container { width: 1200px; margin: 20px auto;}
+        h1 { text-align: center; margin-bottom: 30px;}
+        .dan { width: 8%; padding: 10px 10px 10px 20px; margin: 10px; 
+        display: inline-block;border: 1px solid black; line-height: 2em;}
+        .dan h3 { text-align: center;}
+    </style>
     <!-- 
-        1. 구구단의 2단부터 9단까지 한번에 브라우저로 출력
+    1. 구구단 2단부터 9단까지 한번에 브라우저로 출력
      -->
-     <style>
-         .container {
-             width: 1500px; margin: 20px auto;
-         }
-         h1 {
-             text-align: center; margin-bottom: 30px;
-         }
-         .dan {width: 100px; display: inline-block; padding: 10px 10px 10px 20px; margin: 20px;line-height: 30px; border: 1px solid black; font-size: 1.1em;
-         }
-         .dan h3 { text-align: center;}
-     </style>
 </head>
-
 <body>
     <div class="container">
         <h1>구구단</h1>
         <script>
-            for (var i = 2; i <= 9; i++) {
-                document.write('<div class="dan">');
-                document.write('<h3>' + i + '단</h3>');
-
-                for (var j = 1; j <= 9; j++) {
-                    document.write(i + ' * ' + j + ' = ' + (i * j) + '<br>');
+            for(var i=2; i<=9; i++) {
+                document.write("<div class='dan'>");
+                document.write("<h3>" + i + "단</h3>")
+                for(var j=1; j<=9; j++) {
+                    document.write(i + " × " + j + " = " + (i*j) + "<br>");
                 }
-                
-                document.write('</div>');
+                document.write("</div>");
             }
         </script>
     </div>
 </body>
-
 </html>
