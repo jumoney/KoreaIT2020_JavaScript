@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function show(item) {
+            alert(item);
+        }
+
+        var myFunc = function(item) {
+            console.log('A : ' + item)
+        }
+
+        var myFunc2 = function(item) {
+            console.log('B : ' + item)
+        }
+
+        function forEach(arr, fn) {
+            for(var i=0; i<arr.length; i++) {
+                var item = arr[i]
+                fn(item)
+            }
+        }
+
+        var arr = ['A', 'B', '다']
+        forEach(arr,  function(item) {
+            console.log('C : ' + item)
+        });
+
+        //------------------------filter 구현---------------------------
+
+        Array.prototype.arr = []
+        Array.prototype.filter2 = function(fn) {
+            var myArr = []
+            for(var i=0; i<this.arr.length; i++){
+                var item = this.arr[i]
+                if(fn(item)){
+                    var fnResult = item;
+                    myArr.push(fnResult);
+                }
+            }
+            return myArr;
+        };
+
+        var arr2 = [];
+        arr2.arr = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        var result2 = arr2.filter2(function(item) {
+            return item%2 == 0;
+        });
+        
+        console.log('arr2.arr : ' + arr2.arr);
+        console.log('result2 : ' + result2);
+
+        //------------------------find 구현---------------------------
+
+        Array.prototype.arr = []
+        Array.prototype.find2 = function(fn) {
+            var myArr = []
+            for(var i=0; i<this.arr.length; i++){
+                var item = this.arr[i]
+                if(fn(item)){
+                    var fnResult = item;
+                    myArr.push(fnResult);
+                    return myArr;     
+                }
+            }
+            return 0;
+        };
+
+        var arr2 = [];
+        arr2.arr = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        var result2 = arr2.find2(function(item) {
+            return item%2 == 0;
+        });
+        
+        console.log('arr2.arr : ' + arr2.arr);
+        console.log('result2 : ' + result2);
+    </script>
+</body>
+</html>
